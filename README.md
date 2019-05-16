@@ -1,6 +1,6 @@
 # BookMarkLite
 
-![Image of Yaktocat](https://raw.githubusercontent.com/Kirill-Gorelov/BookMarkLite/master/dist/previe_new.png)
+![Image of Yaktocat](https://raw.githubusercontent.com/Kirill-Gorelov/BookMarkLite/master/dist/previe-new.png)
 
 ### Описание
 
