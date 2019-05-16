@@ -1,3 +1,3 @@
 # BookMarkLite
 
-![Image of Yaktocat](/dist/previe.png)
+![Image of Yaktocat](https://raw.githubusercontent.com/Kirill-Gorelov/BookMarkLite/master/dist/previe.png)
