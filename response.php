@@ -49,6 +49,16 @@ foreach($data as $key => &$item) {
    if($item['parent_id'] && isset($itemsByReference[$item['parent_id']]))
       unset($data[$key]);
 }
+
+usort
+( 
+    $data,
+    create_function
+    (   
+        '$a,$b', 
+        'return ($a["text"] > $b["text"]);' 
+    )
+);
 // Encode:
 echo json_encode($data);
 ?>
