@@ -59,7 +59,15 @@ $(document).ready(function(){
                   },
             dataType: "text",
             success: function(resultData){
+              console.log(resultData);
                 data = JSON.parse(resultData);
+                if (data.succes == 1) {
+                  $('.alert-success').removeClass('hiddens');
+                }else{
+                  $('.alert-danger').removeClass('hiddens');
+                }
+                setTimeout(function(){$('.alert-success').addClass('hiddens')},3000);
+                setTimeout(function(){$('.alert-danger').addClass('hiddens')},3000);
                 // console.log(resultData);
                 // alert(data.msg);
                 $('#value').val('');
@@ -108,7 +116,7 @@ $(document).ready(function(){
             success: function(resultData){
                 data = JSON.parse(resultData);
                 // console.log(resultData);
-                alert(data.msg);
+                // alert(data.msg);
             }
       });
       window.location.reload();

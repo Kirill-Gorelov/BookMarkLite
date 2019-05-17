@@ -11,12 +11,8 @@ $db = new Dibi\Connection([
 ]);
 
 function parseTitle($url) {
-    // Get the text in a <title>
-    try {
-        $html = file_get_contents($url);
-    } catch (Exception $e) {
-        return false;
-    }
+    $html = file_get_contents($url);
+    if (!$html){return $url;}
     
 	$matches = array();
 	preg_match("/<title>(.*)<\/title>/is", $html, $matches);
@@ -32,6 +28,7 @@ $name = $_REQUEST['name'];
 
 if ($_REQUEST['type'] == 'link') {
         $title = parseTitle($name);
+        // var_dump($title);
         if($title == false){
             echo json_encode(array('succes'=>0,'msg'=>'Это не ссылка'));
         return false;

@@ -56,7 +56,7 @@ usort
     create_function
     (   
         '$a,$b', 
-        'return ($a["text"] > $b["text"]);' 
+        'return ($a["id"] > $b["id"]);' 
     )
 );
 // Encode:

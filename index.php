@@ -12,8 +12,11 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script> -->
 <script src="dist/jstree.min.js"></script>
 <title>Менеджер закладок</title>
-<script>
-</script>
+<style>
+.hiddens{
+  display:none;
+}
+</style>
 </head>
 <body>
 <nav class="navbar navbar-dark bg-warning">
@@ -51,6 +54,20 @@
         <input id="id_folder" type="hidden" >
 
         <button type="button" class="btn btn-danger m-2 delete_folder">Удалить папку</button>
+
+        <div class="alert alert-success alert-dismissible fade show hiddens" role="alert">
+        Создалась
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="alert alert-danger alert-dismissible fade show hiddens" role="alert">
+        Ошибка 
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
 
 
         <div class="contents_result"></div>

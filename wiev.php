@@ -11,7 +11,7 @@ $db = new Dibi\Connection([
     'database' => 'bookmarks',
 ]);
 
-$result = $db->query('SELECT * FROM link WHERE folder_id=?',$_REQUEST['folder_id']);
+$result = $db->query('SELECT * FROM link WHERE folder_id=? ORDER BY id DESC',$_REQUEST['folder_id']);
 // var_dump($_REQUEST);
 foreach ($result as $row) { ?>
 <div class="card m-2">
