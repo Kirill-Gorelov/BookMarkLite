@@ -19,7 +19,7 @@ function parseTitle($url) {
 	if (count($matches) > 1) {
 		return trim($matches[1]);
 	} else {
-		return null;
+		return $url;
 	}
 }
 

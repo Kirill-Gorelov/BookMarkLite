@@ -12,6 +12,9 @@ if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
+// $sql = "SELECT *, COUNT(l.folder_id) as count FROM `treeview_items` as t
+// LEFT OUTER JOIN link as l ON l.folder_id = t.id 
+// GROUP by t.id";
 $sql = "SELECT * FROM `treeview_items` ";
 $res = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
 	//iterate on results row and create new index array of data
@@ -38,17 +41,21 @@ foreach($data as $key => &$item) {
    // Empty data class (so that json_encode adds "data: {}" ) 
    $itemsByReference[$item['id']]['data'] = new StdClass();
 }
-
+// var_dump($data);
 // Set items as children of the relevant parent item.
 foreach($data as $key => &$item)
    if($item['parent_id'] && isset($itemsByReference[$item['parent_id']]))
       $itemsByReference [$item['parent_id']]['children'][] = &$item;
+
+// var_dump($data);
 
 // Remove items that were added to parents elsewhere:
 foreach($data as $key => &$item) {
    if($item['parent_id'] && isset($itemsByReference[$item['parent_id']]))
       unset($data[$key]);
 }
+
+// var_dump($data);
 
 usort
 ( 
